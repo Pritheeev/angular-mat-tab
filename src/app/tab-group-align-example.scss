@@ -1,0 +1,269 @@
+//import from variables.scss
+@import "../styles.scss";
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSansBoldItalic.ttf) format("truetype");
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSansItalic.ttf) format("truetype");
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSansBold.ttf) format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSans.ttf) format("truetype");
+}
+
+// Custom colors defined
+$orange-color: #e68e15;
+$purple-color: #871fcc;
+$red-color: #ff3826;
+$green-color: #10bf00;
+$background-color: #f8f8f8;
+$text-color: #595959;
+$blue-color: #39b4d4;
+$primary-color: #287e94;
+$white-color: #ffffff;
+$warn-color: #f6821e;
+$grey-color: #3c4850;
+$silver-color: #d9d9da;
+
+// Custom fonts defined
+$font: "Lato";
+$font2: "Inspira";
+
+// Custom dark text colors
+$custom-dark-primary-text: $text-color;
+$custom-dark-secondary-text: rgba($custom-dark-primary-text, 0.78);
+$custom-dark-disabled-text: #909090;
+$custom-dark-dividers: rgba($custom-dark-primary-text, 0.12);
+$custom-dark-focused: $custom-dark-primary-text;
+
+// Custom light text colors
+$custom-light-primary-text: white;
+$custom-light-background: $background-color;
+// $custom-light-secondary-text: rgba($light-primary-text, 0.78);
+// $custom-light-disabled-text: rgba($light-primary-text, 0.5);
+// $custom-light-dividers: $light-primary-text;
+// $custom-light-focused: $light-primary-text;
+
+// Custom Primary Color Palette for MAterial, 500 is default
+// Here Contrast set the dark/light text color based on background color
+$custom-primary-color: (
+  50: #e5f0f2,
+  100: #bfd8df,
+  200: #94bfca,
+  300: #69a5b4,
+  400: #4891a4,
+  500: #287e94,
+  600: #24768c,
+  700: #1e6b81,
+  800: #186177,
+  900: #0f4e65,
+  A100: #9ae2ff,
+  A200: #67d3ff,
+  A400: #34c4ff,
+  A700: #1abcff,
+  contrast: (
+    50: $custom-dark-primary-text,
+    100: $custom-dark-primary-text,
+    200: $custom-dark-primary-text,
+    300: $custom-dark-primary-text,
+    400: $custom-light-primary-text,
+    500: $custom-light-primary-text,
+    600: $custom-light-primary-text,
+    700: $custom-light-primary-text,
+    800: $custom-light-primary-text,
+    900: $custom-light-primary-text,
+    A100: $custom-dark-primary-text,
+    A200: $custom-dark-primary-text,
+    A400: $custom-light-primary-text,
+    A700: $custom-light-primary-text
+  )
+);
+
+// Custom Warning Color Palette for MAterial, 500 is default
+$custom-warn-color: (
+  50: #fef0e4,
+  100: #fcdabc,
+  200: #fbc18f,
+  300: #f9a862,
+  400: #f79540,
+  500: #f6821e,
+  600: #f57a1a,
+  700: #f36f16,
+  800: #f26512,
+  900: #ef520a,
+  A100: #ffffff,
+  A200: #ffece5,
+  A400: #ffc7b3,
+  A700: #ffb499,
+  contrast: (
+    50: $custom-dark-primary-text,
+    100: $custom-dark-primary-text,
+    200: $custom-dark-primary-text,
+    300: $custom-dark-primary-text,
+    400: $custom-light-primary-text,
+    500: $custom-light-primary-text,
+    600: $custom-light-primary-text,
+    700: $custom-light-primary-text,
+    800: $custom-light-primary-text,
+    900: $custom-light-primary-text,
+    A100: $custom-dark-primary-text,
+    A200: $custom-dark-primary-text,
+    A400: $custom-dark-primary-text,
+    A700: $custom-light-primary-text
+  )
+);
+
+
+
+
+//This is imported from theme.scss
+@import "~@angular/material/theming";
+// Importing custom varaibles
+
+// Default browser context for conversion of pt to em
+$browser-context: 12;
+
+// Sass function to convert points into em
+@function em($points, $context: $browser-context) {
+  @return #{$points/$context}em;
+}
+
+// Sass function to convert points into em (no units)
+@function emul($points, $context: $browser-context) {
+  @return #{$points/$context};
+}
+
+// Custom Typography set for Components , Overriding in Material Core
+// ****DONT INCLUDE $body-1 & $input as scss mixins throws error*****
+// For Updating specific typography font, follow $headline: mat-typography-level(em(20), em(24), 400,'Lato')
+$custom-typography: mat-typography-config(
+  $font-family: $font,
+  /* Setting Default fonts */ $display-4: mat-typography-level(em(120), em(12), 300),
+  /* have to update */ $display-3: mat-typography-level(em(40), em(8), 400),
+  /* have to update */ $display-2: mat-typography-level(em(20), em(14), 400),
+  /* have to update */ $display-1: mat-typography-level(em(8), em(8), 400),
+  /* have to update */ $headline: mat-typography-level(em(20), em(24), 400),
+  /* have to update */ $title: mat-typography-level(em(16), em(16), 400),
+  $body-2: mat-typography-level(em(14), em(14), 400),
+  $subheading-2: mat-typography-level(em(12), em(12), 400),
+  $subheading-1: mat-typography-level(em(10), em(10), 400),
+  $button: mat-typography-level(em(10), em(10), 400),
+  $caption: mat-typography-level(em(8), em(8), 400),
+  /* Line-height must be unit-less fraction of the font-size. */ /* $input: mat-typography-level(em(8), emul(8), 400)*/
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat-core();
+@include mat-core($custom-typography);
+
+// Custom foreground palette for light themes.
+$custom-light-theme-foreground: (
+  base: $custom-dark-primary-text,
+  divider: $custom-dark-dividers,
+  dividers: $custom-dark-dividers,
+  disabled: $custom-dark-disabled-text,
+  disabled-button: rgba($custom-dark-primary-text, 0.26),
+  disabled-text: $custom-dark-disabled-text,
+  elevation: $custom-dark-primary-text,
+  hint-text: $custom-dark-disabled-text,
+  secondary-text: $custom-dark-secondary-text,
+  icon: $custom-dark-primary-text,
+  icons: $custom-dark-primary-text,
+  text: $custom-dark-primary-text,
+  slider-min: rgba($custom-dark-primary-text, 0.87),
+  slider-off: rgba($custom-dark-primary-text, 0.26),
+  slider-off-active: rgba($custom-dark-primary-text, 0.38)
+);
+
+// Custom background palette for light themes.
+$custom-light-theme-background: (
+  status-bar: $custom-light-primary-text,
+  app-bar: $custom-light-primary-text,
+  background: $custom-light-background,
+  hover: rgba($custom-dark-primary-text, 0.04),
+  card: $custom-light-background,
+  dialog: $custom-light-background,
+  disabled-button: rgba($custom-dark-primary-text, 0.12),
+  raised-button: mat-color($custom-primary-color, 100),
+  focused-button: $custom-dark-focused,
+  selected-button: $custom-light-primary-text,
+  selected-disabled-button: $custom-light-primary-text,
+  disabled-button-toggle: $custom-light-primary-text,
+  unselected-chip: $custom-light-primary-text,
+  disabled-list-option: $custom-light-primary-text
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+// below creates a primary & accent palette
+$configurator-ui-primary: mat-palette($custom-primary-color);
+$configurator-ui-accent: mat-palette($custom-primary-color);
+
+// The warn palette is optional
+$configurator-ui-warn: mat-palette($custom-warn-color);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$configurator-ui-theme: mat-light-theme($configurator-ui-primary, $configurator-ui-accent, $configurator-ui-warn);
+$my-app-theme-custom: map-merge(
+  $configurator-ui-theme,
+  (
+    foreground: $custom-light-theme-foreground,
+    background: $custom-light-theme-background
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($my-app-theme-custom);
+
+
+//mat tab styling
+.mat-tab-label {
+  font-size: mat-font-size($custom-typography, title);
+  line-height: mat-line-height($custom-typography, title);
+  font-weight: mat-font-weight($custom-typography, title);
+  height: inherit !important;
+  padding: 0 !important;
+  margin: 0 32px 0 16px;
+  opacity: 1 !important;
+}
+
+.mat-tab-label:first-child {
+  margin: 0 32px 0 0;
+}
+
+.mat-tab-label-active {
+  color: $primary-color;
+  border-bottom: 2px solid $blue-color;
+  opacity: 1 !important;
+}
+
+.mat-tab-label-container {
+  border-bottom: 1px solid $custom-dark-dividers;
+}
+
+.mat-tab-nav-bar,
+.mat-tab-header {
+  border-bottom: 0 !important;
+}
+
+.mat-ink-bar {
+  display: none;
+}

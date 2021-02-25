@@ -1,0 +1,252 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSansBoldItalic.ttf) format("truetype");
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSansItalic.ttf) format("truetype");
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSansBold.ttf) format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Inspira;
+  src: url(/assets/fonts/GEInspiraSans.ttf) format("truetype");
+}
+
+// Custom colors defined
+$orange-color: #e68e15;
+$purple-color: #871fcc;
+$red-color: #ff3826;
+$green-color: #10bf00;
+$background-color: #f8f8f8;
+$text-color: #595959;
+$blue-color: #39b4d4;
+$primary-color: #287e94;
+$white-color: #ffffff;
+$warn-color: #f6821e;
+$grey-color: #3c4850;
+$silver-color: #d9d9da;
+
+// Custom fonts defined
+$font: "Lato";
+$font2: "Inspira";
+
+// Custom dark text colors
+$custom-dark-primary-text: $text-color;
+$custom-dark-secondary-text: rgba($custom-dark-primary-text, 0.78);
+$custom-dark-disabled-text: #909090;
+$custom-dark-dividers: rgba($custom-dark-primary-text, 0.12);
+$custom-dark-focused: $custom-dark-primary-text;
+
+// Custom light text colors
+$custom-light-primary-text: white;
+$custom-light-background: $background-color;
+// $custom-light-secondary-text: rgba($light-primary-text, 0.78);
+// $custom-light-disabled-text: rgba($light-primary-text, 0.5);
+// $custom-light-dividers: $light-primary-text;
+// $custom-light-focused: $light-primary-text;
+
+// Custom Primary Color Palette for MAterial, 500 is default
+// Here Contrast set the dark/light text color based on background color
+$custom-primary-color: (
+  50: #e5f0f2,
+  100: #bfd8df,
+  200: #94bfca,
+  300: #69a5b4,
+  400: #4891a4,
+  500: #287e94,
+  600: #24768c,
+  700: #1e6b81,
+  800: #186177,
+  900: #0f4e65,
+  A100: #9ae2ff,
+  A200: #67d3ff,
+  A400: #34c4ff,
+  A700: #1abcff,
+  contrast: (
+    50: $custom-dark-primary-text,
+    100: $custom-dark-primary-text,
+    200: $custom-dark-primary-text,
+    300: $custom-dark-primary-text,
+    400: $custom-light-primary-text,
+    500: $custom-light-primary-text,
+    600: $custom-light-primary-text,
+    700: $custom-light-primary-text,
+    800: $custom-light-primary-text,
+    900: $custom-light-primary-text,
+    A100: $custom-dark-primary-text,
+    A200: $custom-dark-primary-text,
+    A400: $custom-light-primary-text,
+    A700: $custom-light-primary-text
+  )
+);
+
+// Custom Warning Color Palette for MAterial, 500 is default
+$custom-warn-color: (
+  50: #fef0e4,
+  100: #fcdabc,
+  200: #fbc18f,
+  300: #f9a862,
+  400: #f79540,
+  500: #f6821e,
+  600: #f57a1a,
+  700: #f36f16,
+  800: #f26512,
+  900: #ef520a,
+  A100: #ffffff,
+  A200: #ffece5,
+  A400: #ffc7b3,
+  A700: #ffb499,
+  contrast: (
+    50: $custom-dark-primary-text,
+    100: $custom-dark-primary-text,
+    200: $custom-dark-primary-text,
+    300: $custom-dark-primary-text,
+    400: $custom-light-primary-text,
+    500: $custom-light-primary-text,
+    600: $custom-light-primary-text,
+    700: $custom-light-primary-text,
+    800: $custom-light-primary-text,
+    900: $custom-light-primary-text,
+    A100: $custom-dark-primary-text,
+    A200: $custom-dark-primary-text,
+    A400: $custom-dark-primary-text,
+    A700: $custom-light-primary-text
+  )
+);
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+// Setting default fint & color for non-material components
+body {
+  font-family: $font;
+  color: $text-color;
+}
+
+// Overiding default 16px margin from angular
+p {
+  margin: 0;
+}
+
+.none {
+  display: none !important;
+}
+// Text Styling
+.fonts-light {
+  font-weight: 300;
+}
+
+.fonts-new {
+  font-family: $font2;
+}
+.caps {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis-ver {
+  // overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Colors Styling
+.border-primary {
+  border-color: $primary-color !important;
+}
+
+.bg-primary {
+  background: $primary-color;
+}
+
+.color-primary {
+  color: $primary-color;
+}
+
+.bg-blue {
+  background: $blue-color;
+}
+
+.border-blue {
+  border-color: $blue-color !important;
+}
+
+.bg-grey {
+  background: $grey-color;
+}
+
+.border-grey {
+  border-color: $grey-color !important;
+}
+
+.color-grey {
+  color: $grey-color;
+}
+
+.color-white {
+  color: $white-color;
+}
+
+.color-green {
+  color: $green-color;
+}
+
+.bg-green {
+  background: $green-color;
+}
+
+.color-orange {
+  color: $orange-color;
+}
+
+.color-red {
+  color: $red-color;
+}
+
+.color-purple {
+  color: $purple-color;
+}
+
+.color-text {
+  color: $text-color;
+}
+
+//Background Styling
+.bg {
+  background: $background-color;
+}
+
+.bg-white {
+  background: $white-color;
+}
+
+.bg-purple {
+  background: $purple-color !important;
+}
+
+.bg-orange {
+  background: $orange-color !important;
+}
